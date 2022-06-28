@@ -1,5 +1,8 @@
 package screen
 
+import extensions.getNotEmptyInt
+import extensions.getNotEmptyString
+
 class ShoppingCategory {
 
     fun showCategories() {
@@ -11,12 +14,12 @@ class ShoppingCategory {
 
         println("=> 장바구니로 이동하시려면 #을 입력해주세요")
 
-        var selectedCategory = readLine()
+        var selectedCategory = readLine().getNotEmptyString()
 
-        while (selectedCategory.isNullOrBlank()) {
-            println("값을 입력해주세요")
-            selectedCategory = readLine()
-        }
+//        while (selectedCategory.isNullOrBlank()) {        // getNotEmptyString() 함수 사용했으므로, while문 안써도 됨
+//            println("값을 입력해주세요")
+//            selectedCategory = readLine()
+//        }
 
         if (selectedCategory == "#") {
 
