@@ -3,10 +3,11 @@ package screen
 import LINE_DIVIDER
 import data.Cartitems
 
-class ShoppingCart {
+class ShoppingCart : Screen() {
     private val products = Cartitems.products
 
     fun showCartItems(){
+        ScreenStack.push(this)
         if(products.isNotEmpty()){
             println(
                 products.keys.joinToString(
